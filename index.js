@@ -14,6 +14,7 @@ const io = new Server(server, {
     methods: ['GET', 'POST'],
   },
   transports: ['polling', 'websocket'], // Ensure both transports are allowed
+   withCredentials: true,
 });
 
 
