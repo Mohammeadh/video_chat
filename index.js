@@ -9,11 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const frontend_url="https://video-chat-mohammed.netlify.app/" 
 
-app.use(cors({
-  origin: 'https://video-chat-mohammed.netlify.app', // Frontend domain
-  methods: ['GET', 'POST'],
-  credentials: true, // Allow cookies and authentication headers
-}));
+app.use(cors({ origin: 'https://video-chat-mohammed.netlify.app' }));
 
 const io = new Server(server, {
   cors: {
