@@ -10,15 +10,12 @@ const server = http.createServer(app);
 const frontend_url="https://video-chat-mohammed.netlify.app/" 
 const io = new Server(server, {
   cors: {
-    origin: frontend_url, 
+    origin:"*", 
     methods: ['GET', 'POST'],
   },
 });
 
-app.use(cors({
-  origin: 'https://video-chat-mohammed.netlify.app',
-  methods: ['GET', 'POST'],
-}));
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Server is running!');
