@@ -17,7 +17,7 @@ const io = new Server(server, {
     methods: ['GET', 'POST'],
     credentials: true, // Important for cookies and auth headers
   },
-  transports: ['polling', 'websocket'], // Ensure both transports are allowed
+  transports: ['websocket'], // Ensure both transports are allowed
 });
 
 app.get('/', (req, res) => {
