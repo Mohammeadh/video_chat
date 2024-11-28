@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
-const frontend_url=process.env.frontend_url 
+const frontend_url="https://video-app-mohammed.netlify.app/" 
 const io = new Server(server, {
   cors: {
     origin: frontend_url, 
