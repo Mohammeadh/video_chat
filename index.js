@@ -10,7 +10,7 @@ const server = http.createServer(app);
 const frontend_url="https://video-chat-mohammed.netlify.app/" 
 const io = new Server(server, {
   cors: {
-    origin: 'https://video-chat-mohammed.netlify.app',
+    origin: '*',
     methods: ['GET', 'POST'],
   },
   transports: ['polling', 'websocket'], // Ensure both transports are allowed
