@@ -8,17 +8,21 @@ require('dotenv').config();
 const app = express();
 const server = http.createServer(app);
 const frontend_url="https://video-chat-mohammed.netlify.app/" 
+
+app.use(cors({
+  origin: 'https://video-chat-mohammed.netlify.app', // Frontend domain
+  methods: ['GET', 'POST'],
+  credentials: true, // Allow cookies and authentication headers
+}));
+
 const io = new Server(server, {
   cors: {
-    origin: 'https://video-chat-mohammed.netlify.app',  // Specify the correct frontend URL
+    origin: 'https://video-chat-mohammed.netlify.app',
     methods: ['GET', 'POST'],
+    credentials: true, // Important for cookies and auth headers
   },
   transports: ['polling', 'websocket'], // Ensure both transports are allowed
-   withCredentials: true,
 });
-
-
-app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Server is running!');
