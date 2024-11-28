@@ -22,6 +22,7 @@ app.use(cors());
 app.get('/', (req, res) => {
   res.send('Server is running!');
 });
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Socket.IO connection
 io.on('connection', (socket) => {
