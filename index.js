@@ -15,7 +15,10 @@ const io = new Server(server, {
   },
 });
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://video-chat-mohammed.netlify.app',
+  methods: ['GET', 'POST'],
+}));
 
 app.get('/', (req, res) => {
   res.send('Server is running!');
